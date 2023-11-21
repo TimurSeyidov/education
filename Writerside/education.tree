@@ -16,5 +16,6 @@
             <toc-element topic="change-analyze.md"/>
             <toc-element topic="history-analyze.md"/>
         </toc-element>
+        <toc-element topic="cancel-change.md"/>
     </toc-element>
 </instance-profile>
