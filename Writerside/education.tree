@@ -23,6 +23,7 @@
             <toc-element topic="git-learn.md"/>
             <toc-element topic="git-ignore.md"/>
             <toc-element topic="stash.md"/>
+            <toc-element topic="opened-project.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>

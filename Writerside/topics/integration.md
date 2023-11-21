@@ -97,6 +97,7 @@ The authenticity of host github.com cannot be established. RSA key fingerprint i
 
 ### Дополнительные материалы
 
-- [Цикл git-разработки (init, commit, push on GitHub)](https://www.youtube.com/watch?v=ku3Mg_XCsAo)
+- Цикл git-разработки (init, commit, push on GitHub)
+  <video src="https://www.youtube.com/watch?v=ku3Mg_XCsAo" />
 - [GitHub — Настройка и конфигурация учетной записи](https://git-scm.com/book/ru/v2/GitHub-Настройка-и-конфигурация-учетной-записи)
 - [Создание SSH-ключа для работы с GitHub по SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh)
