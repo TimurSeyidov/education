@@ -18,5 +18,6 @@
             <toc-element topic="cancel-change.md"/>
             <toc-element topic="cancel-commit.md"/>
         </toc-element>
+        <toc-element topic="change-last-commit.md"/>
     </toc-element>
 </instance-profile>
