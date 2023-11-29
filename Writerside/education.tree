@@ -32,5 +32,10 @@
         <toc-element topic="how_comp_connect.md"/>
         <toc-element topic="local_global_network.md"/>
         <toc-element topic="computer_adresses.md"/>
+        <toc-element topic="sync_info_comp.md"/>
+        <toc-element topic="client-server.md"/>
+        <toc-element topic="site_internet.md"/>
+        <toc-element topic="security-https.md"/>
+        <toc-element topic="security-digital.md"/>
     </toc-element>
 </instance-profile>
