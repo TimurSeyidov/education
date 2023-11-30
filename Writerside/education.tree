@@ -46,5 +46,7 @@
         <toc-element topic="read-files.md"/>
         <toc-element topic="grep.md"/>
         <toc-element topic="edit-files.md"/>
+        <toc-element topic="streams.md"/>
+        <toc-element topic="pipeline.md"/>
     </toc-element>
 </instance-profile>
