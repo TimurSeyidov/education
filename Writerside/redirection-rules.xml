@@ -10,4 +10,8 @@
         <description>Created after removal of "Tutorial" from Education</description>
         <accepts>Tutorial.html</accepts>
     </rule>
+    <rule id="2e3de350">
+        <description>Created after removal of "IT лекции" from Education</description>
+        <accepts>starter-topic.html</accepts>
+    </rule>
 </rules>
