@@ -45,5 +45,6 @@
         <toc-element topic="filestructure.md"/>
         <toc-element topic="read-files.md"/>
         <toc-element topic="grep.md"/>
+        <toc-element topic="edit-files.md"/>
     </toc-element>
 </instance-profile>
