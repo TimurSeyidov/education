@@ -37,5 +37,6 @@
         <toc-element topic="site_internet.md"/>
         <toc-element topic="security-https.md"/>
         <toc-element topic="security-digital.md"/>
+        <toc-element topic="private-vpn.md"/>
     </toc-element>
 </instance-profile>
