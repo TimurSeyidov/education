@@ -14,4 +14,8 @@
         <description>Created after removal of "IT лекции" from Education</description>
         <accepts>starter-topic.html</accepts>
     </rule>
+    <rule id="3b485ff8">
+        <description>Created after removal of "Файловая структура" from Education</description>
+        <accepts>filestructure.html</accepts>
+    </rule>
 </rules>

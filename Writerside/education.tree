@@ -36,4 +36,12 @@
         <toc-element topic="security-digital.md"/>
         <toc-element topic="private-vpn.md"/>
     </toc-element>
+    <toc-element topic="cli.md">
+        <toc-element topic="intro.md"/>
+        <toc-element topic="operating-systems.md"/>
+        <toc-element topic="command-line.md"/>
+        <toc-element topic="navigation.md"/>
+        <toc-element topic="command-line-interface.md"/>
+        <toc-element topic="filestructure.md"/>
+    </toc-element>
 </instance-profile>
