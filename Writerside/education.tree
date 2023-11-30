@@ -43,5 +43,7 @@
         <toc-element topic="navigation.md"/>
         <toc-element topic="command-line-interface.md"/>
         <toc-element topic="filestructure.md"/>
+        <toc-element topic="read-files.md"/>
+        <toc-element topic="grep.md"/>
     </toc-element>
 </instance-profile>
