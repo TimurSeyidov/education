@@ -48,5 +48,14 @@
         <toc-element topic="edit-files.md"/>
         <toc-element topic="streams.md"/>
         <toc-element topic="pipeline.md"/>
+        <toc-element topic="filetree-manipulations.md"/>
+        <toc-element topic="environment-variables.md"/>
+        <toc-element topic="history.md"/>
+        <toc-element topic="users-and-groups.md"/>
+        <toc-element topic="sudo.md"/>
+        <toc-element topic="permissions.md"/>
+        <toc-element topic="package-manager.md"/>
+        <toc-element topic="execution.md"/>
+        <toc-element topic="cli-control-work.md"/>
     </toc-element>
 </instance-profile>
