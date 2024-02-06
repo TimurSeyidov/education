@@ -8,7 +8,12 @@
 
     <toc-element topic="python-oop.md">
         <toc-element topic="python-oop-introducing.md"/>
-        <toc-element topic="oop-python-intro.md"/>
+        <toc-element topic="oop-python-intro.md">
+            <toc-element topic="oop-python-practicum.md"/>
+        </toc-element>
+        <toc-element topic="polymorph.md">
+            <toc-element topic="oop-python-polymorph-practicum.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Git.md">
         <toc-element topic="Introduction.md"/>
