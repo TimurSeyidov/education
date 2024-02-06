@@ -14,6 +14,12 @@
         <toc-element topic="polymorph.md">
             <toc-element topic="oop-python-polymorph-practicum.md"/>
         </toc-element>
+        <toc-element topic="python-oop-magic.md">
+            <toc-element topic="python-oop-magic-practicum.md"/>
+        </toc-element>
+        <toc-element topic="python-oop-inheritance.md">
+            <toc-element topic="python-oop-inheritance-practicum.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Git.md">
         <toc-element topic="Introduction.md"/>
