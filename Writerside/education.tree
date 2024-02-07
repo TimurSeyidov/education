@@ -38,6 +38,19 @@
         <toc-element topic="stash.md"/>
         <toc-element topic="opened-project.md"/>
     </toc-element>
+    <toc-element topic="redis_basic.md">
+        <toc-element topic="redis-intro.md"/>
+        <toc-element topic="redis-kv-storage.md"/>
+        <toc-element topic="redis-cache.md"/>
+        <toc-element topic="redis-counters.md"/>
+        <toc-element topic="redis-lists.md"/>
+        <toc-element topic="redis-hashes.md"/>
+        <toc-element topic="redis-sets.md"/>
+        <toc-element topic="redis-sorted-sets.md"/>
+        <toc-element topic="redis-hyperloglog.md"/>
+        <toc-element topic="redis-message-broker.md"/>
+        <toc-element topic="redis-pubsub.md"/>
+    </toc-element>
     <toc-element topic="intro_to_internet.md">
         <toc-element topic="internet_intro.md"/>
         <toc-element topic="what_if_internet.md"/>
