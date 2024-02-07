@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildprofiles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd">
+    <variables>
+        <custom-favicons>../images/favicon-16x16.png</custom-favicons>
+        <primary-color>iris</primary-color>
+        <header-logo>../images/uunit.svg</header-logo>
+    </variables>
+    <build-profile instance="education"/>
+    <footer>
+        <copyright>2023-2024</copyright>
+    </footer>
+</buildprofiles>
