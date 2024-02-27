@@ -22,4 +22,8 @@
         <description>Created after removal of "Составные структуры с Hashes" from Education</description>
         <accepts>redis-hashes.html</accepts>
     </rule>
+    <rule id="bee4c9c">
+        <description>Created after removal of "Методы класса и статические методы" from Education</description>
+        <accepts>classmethod_static.html</accepts>
+    </rule>
 </rules>
