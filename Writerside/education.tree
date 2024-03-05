@@ -20,6 +20,9 @@
         <toc-element topic="python-oop-inheritance.md">
             <toc-element topic="python-oop-inheritance-practicum.md"/>
         </toc-element>
+        <toc-element topic="overwrite_decorator.md">
+            <toc-element topic="exercise_decorator.md"/>
+        </toc-element>
         <toc-element topic="classmethod_static.md"/>
         <toc-element topic="modes_getter_setter.md"/>
         <toc-element topic="SOLID.md">
