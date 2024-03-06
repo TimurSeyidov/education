@@ -33,6 +33,11 @@
             <toc-element topic="dependency_inversion_principle.md"/>
         </toc-element>
     </toc-element>
+    <toc-element topic="python.md">
+        <toc-element topic="input_output_operation.md">
+            <toc-element topic="exercise_input_output.md"/>
+        </toc-element>
+    </toc-element>
     <toc-element topic="Git.md">
         <toc-element topic="Introduction.md"/>
         <toc-element topic="work-process.md"/>
