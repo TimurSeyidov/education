@@ -37,6 +37,9 @@
         <toc-element topic="input_output_operation.md">
             <toc-element topic="exercise_input_output.md"/>
         </toc-element>
+        <toc-element topic="python-condition.md">
+            <toc-element topic="exersice-python-condition.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Git.md">
         <toc-element topic="Introduction.md"/>
