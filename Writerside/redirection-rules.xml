@@ -26,4 +26,8 @@
         <description>Created after removal of "Методы класса и статические методы" from Education</description>
         <accepts>classmethod_static.html</accepts>
     </rule>
+    <rule id="2c88201f">
+        <description>Created after removal of "Паттерны проектирования" from Education</description>
+        <accepts>Паттерны-проектирования.html</accepts>
+    </rule>
 </rules>
