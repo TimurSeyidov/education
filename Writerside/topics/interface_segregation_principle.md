@@ -7,7 +7,10 @@
 Затем мы создаем класс `SmartPhone` с помощью интерфейса `CommunicationDevice` и реализуем функционал абстрактных методов. До сих пор все было в порядке.
 Теперь предположим, что нам нужно создать стационарный телефон. Он тоже является устройством связи, поэтому мы создаем новый класс `LandlinePhone` через тот же интерфейс `CommunicationDevice`. Именно здесь мы сталкиваемся с проблемой из-за объемного интерфейса `CommunicationDevice`. В классе `LandlinePhone` мы реализовываем метод `make_calls()`, но поскольку мы также наследуем абстрактные методы `send_sms()` и `browse_internet()`, мы должны предоставить реализацию и этих двух абстрактных методов в классе `LandlinePhone`, даже если они в принципе неприменимы к этому виду телефонов. Мы можем либо создать исключение, либо оставить pass вместо реализации, но нам все равно нужно ее предоставить.
 
-```python
+<tabs>
+<tab title="Python">
+<code-block lang="python">
+<![CDATA[
 from abc import ABCMeta, abstractmethod
 
 class CommunicationDevice():
@@ -48,11 +51,57 @@ class LandlinePhone(CommunicationDevice):
     def browse_internet():
         #just pass or raise exception as this feature is not supported
         pass
-```
+]]>
+</code-block>
+</tab>
+<tab title="PHP">
+<code-block lang="php">
+<![CDATA[
+interface CommunicationDevice {
+    public function make_calls();
+    public function send_sms();
+    public function browse_internet();
+}
+
+class SmartPhone implements CommunicationDevice {
+    public function make_calls() {
+        // TO DO
+    }
+
+    public function send_sms() {
+        // TO DO
+    }
+
+    public function browse_internet() {
+        // TO DO
+    }
+}
+
+class LandlinePhone implements CommunicationDevice {
+    public function make_calls() {
+        // TO DO
+    }
+
+    public function send_sms() {
+        // just pass or raise exception as this feature is not supported
+    }
+
+    public function browse_internet() {
+        // just pass or raise exception as this feature is not supported
+    }
+}
+
+]]>
+</code-block>
+</tab>
+</tabs>
 
 Все можно исправить, следуя принципу разделения интерфейсов, как в примере ниже. Вместо создания большого интерфейса мы создаем более маленькие ролевые интерфейсы для каждого метода. Соответствующие классы будут использовать только связанные интерфейсы.
 
-```python
+<tabs>
+<tab title="Python">
+<code-block lang="python">
+<![CDATA[
 from abc import ABCMeta, abstractmethod
 
 class CallingDevice():
@@ -87,4 +136,44 @@ class LandlinePhone(CallingDevice):
     def make_calls():
         #implementation
         pass
-```
+]]>
+</code-block>
+</tab>
+<tab title="PHP">
+<code-block lang="php">
+<![CDATA[
+interface CallingDevice {
+    public function make_calls();
+}
+
+interface MessagingDevice {
+    public function send_sms();
+}
+
+interface InternetbrowsingDevice {
+    public function browse_internet();
+}
+
+class SmartPhone implements CallingDevice, MessagingDevice, InternetbrowsingDevice {
+    public function make_calls() {
+        // TO DO
+    }
+
+    public function send_sms() {
+        // TO DO
+    }
+
+    public function browse_internet() {
+        // TO DO
+    }
+}
+
+class LandlinePhone implementsCallingDevice {
+    public function make_calls() {
+        // TO DO
+    }
+}
+]]>
+</code-block>
+</tab>
+</tabs>

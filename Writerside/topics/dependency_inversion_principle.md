@@ -9,7 +9,10 @@
 Как показано в коде ниже, у нас есть класс `Student`, который мы используем для создания экземпляров `Student` и класса `TeamMemberships`, который содержит сведения о принадлежности учеников к разным командам.
 Теперь мы определим высокоуровневый класс `Analysis`, где нам нужно отсеять всех учеников, принадлежащих красной команде.
 
-```python
+<tabs>
+<tab title="Python">
+<code-block lang="python">
+<![CDATA[
 from enum import Enum
 from abc import ABCMeta, abstractmethod
 
@@ -47,7 +50,60 @@ team_memberships.add_team_memberships(student2, Teams.RED_TEAM)
 team_memberships.add_team_memberships(student3, Teams.GREEN_TEAM)
 
 Analysis(team_memberships)
-```
+]]>
+</code-block>
+</tab>
+<tab title="PHP">
+<code-block lang="php">
+<![CDATA[
+enum Teams
+{
+    case BLUE_TEAM;
+    case RED_TEAM;
+    case GREEN_TEAM;
+}
+
+class Student {
+    public string $name;
+
+    public function __construct(string $name) {
+        $this->name = $name;
+    }
+}
+
+class TeamMemberships {
+    public array $team_memberships = [];
+
+    public function add_team_memberships(Student $student, Teams $team) {
+        $this->team_memberships[] = [$student, $team];
+    }
+}
+
+class Analysis {
+    public function __construct(TeamMemberships $team_student_memberships) {
+        $memberships = $team_student_memberships->team_memberships;
+        foreach ($memberships as $member) {
+            if ($member[1] === Teams::RED_TEAM) {
+                echo $member[0]->name . ' is in RED team';
+            }
+        }
+    }
+}
+
+$student1 = new Student('Ravi');
+$student2 = new Student('Archie');
+$student3 = new Student('James');
+
+$team_memberships = new TeamMemberships();
+$team_memberships->add_team_memberships($student1, Teams::BLUE_TEAM);
+$team_memberships->add_team_memberships($student2, Teams::RED_TEAM);
+$team_memberships->add_team_memberships($student3, Teams::GREEN_TEAM);
+
+new Analysis($team_memberships);
+]]>
+</code-block>
+</tab>
+</tabs>
 
 ```bash
 Archie is in RED team
@@ -56,7 +112,10 @@ Archie is in RED team
 Как видно из реализации, мы напрямую используем `team_student_memberships`.`team_memberships` в высокоуровневом классе `Analysis`, и мы используем реализацию этого списка непосредственно в классе высокого уровня. На данный момент все нормально, но представьте ситуацию, в которой нам нужно изменить эту реализацию со списка на что-то другое. В этом случае наш класс высокого уровня `Analysis` сломается, поскольку он зависит от деталей реализации `TeamMemberships` низкого уровня.
 Теперь взгляните на пример ниже, в котором мы меняем эту реализацию и приводим ее в соответствие с принципом инверсии зависимостей.
 
-```python
+<tabs>
+<tab title="Python">
+<code-block lang="python">
+<![CDATA[
 from enum import Enum
 from abc import ABCMeta, abstractmethod
 
@@ -103,7 +162,76 @@ team_memberships.add_team_memberships(student2, Teams.RED_TEAM)
 team_memberships.add_team_memberships(student3, Teams.GREEN_TEAM)
 
 Analysis(team_memberships)
-```
+]]>
+</code-block>
+</tab>
+<tab title="PHP">
+<code-block lang="php">
+<![CDATA[
+enum Teams
+{
+    case BLUE_TEAM;
+    case RED_TEAM;
+    case GREEN_TEAM;
+}
+
+interface TeamMembershipLookup {
+    public function find_all_students_of_team(Teams $team);
+}
+
+class Student {
+    public string $name;
+
+    public function __construct(string $name) {
+        $this->name = $name;
+    }
+}
+
+class TeamMemberships implements TeamMembershipLookup {
+    private array $team_memberships = [];
+
+    public function add_team_memberships(Student $student, Teams $team) {
+        $this->team_memberships[] = [$student, $team];
+    }
+
+    public function find_all_students_of_team(Teams $team) {
+        return array_map(
+            function ($item) {
+                return $item[0]->name;
+            },
+            array_filter(
+                $this->team_memberships,
+                function ($item) use ($team) {
+                    return $item[1] === $team;
+                }
+            )
+        );
+    }
+}
+
+class Analysis {
+    public function __construct(TeamMemberships $team_student_memberships) {
+        $memberships = $team_student_memberships->find_all_students_of_team(Teams::RED_TEAM);
+        foreach ($memberships as $member) {
+            echo $member . ' is in RED team';
+        }
+    }
+}
+
+$student1 = new Student('Ravi');
+$student2 = new Student('Archie');
+$student3 = new Student('James');
+
+$team_memberships = new TeamMemberships();
+$team_memberships->add_team_memberships($student1, Teams::BLUE_TEAM);
+$team_memberships->add_team_memberships($student2, Teams::RED_TEAM);
+$team_memberships->add_team_memberships($student3, Teams::GREEN_TEAM);
+
+new Analysis($team_memberships);
+]]>
+</code-block>
+</tab>
+</tabs>
 
 ```bash
 Archie is in RED team

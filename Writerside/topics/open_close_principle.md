@@ -6,17 +6,22 @@
 Пример ниже показывает один из способов реализации этого требования.
 В примере у нас есть класс `DiscountCalculator`, который умеет хранить тип одежды. В нем есть функция, которая рассчитывает скидку в зависимости от типа одежды и возвращает новую стоимость за вычетом суммы скидки.
 
-```python
+<tabs>
+<tab title="Python">
+<code-block lang="python">
+<![CDATA[
 from enum import Enum
+
 class Products(Enum):
     SHIRT = 1
     TSHIRT = 2
     PANT = 3
 
+
 class DiscountCalculator():
     def __init__(self, product_type, cost):
-      self.product_type = product_type
-      self.cost = cost
+        self.product_type = product_type
+        self.cost = cost
 
     def get_discounted_price(self):
         if self.product_type == Products.SHIRT:
@@ -35,7 +40,57 @@ print(dc_tshirt.get_discounted_price())
 
 dc_pant = DiscountCalculator(Products.PANT, 100)
 print(dc_pant.get_discounted_price())
-```
+
+]]>
+</code-block>
+</tab>
+<tab title="PHP">
+<code-block lang="php">
+<![CDATA[
+enum Products
+{
+    case SHIRT;
+    case TSHIRT;
+    case PANT;
+}
+
+class DiscountCalculator {
+    private Products $product_type;
+    private float $cost = 0;
+
+    public function __construct(Products $product_type, float $cost = 0) {
+        $this->product_type = $product_type;
+        $this->cost = $cost;
+    }
+
+    public function get_discounted_price() {
+        if ($this->product_type === Products::SHIRT) {
+            return $this->cost - ($this->cost * 0.10);
+        }
+        if ($this->product_type === Products::TSHIRT) {
+            return $this->cost - ($this->cost * 0.15);
+        }
+
+        if ($this->product_type === Products::PANT) {
+            return $this->cost - ($this->cost * 0.25);
+        }
+    }
+}
+
+$dc_shirt = new DiscountCalculator(Products::SHIRT, 100)
+echo $dc_shirt->get_discounted_price() . PHP_EOL;
+
+$dc_tshirt = new DiscountCalculator(Products::TSHIRT, 100)
+echo $dc_tshirt->get_discounted_price() . PHP_EOL;
+
+$dc_pant = new DiscountCalculator(Products::PANT, 100)
+echo $dc_pant->get_discounted_price() . PHP_EOL;
+
+]]>
+</code-block>
+</tab>
+</tabs>
+
 
 ```bash
 90.0
@@ -45,7 +100,10 @@ print(dc_pant.get_discounted_price())
 
 Эта конструкция нарушает принцип открытости/закрытости, поскольку этот класс потребует изменения, если будет добавляться какой-то тип одежды или если сумма скидки на какую-либо одежду изменится.
 
-```python
+<tabs>
+<tab title="Python">
+<code-block lang="python">
+<![CDATA[
 from enum import Enum
 from abc import ABCMeta, abstractmethod
 
@@ -85,7 +143,59 @@ print(dc_tshirt.get_discounted_price())
 
 dc_pant = DiscountCalculatorPant(100)
 print(dc_pant.get_discounted_price())
-```
+
+]]>
+</code-block>
+</tab>
+<tab title="PHP">
+<code-block lang="php">
+<![CDATA[
+interface DiscountCalculator {
+    public function get_discounted_price();
+}
+
+abstract class AbstractDiscountCalculator {
+    protected float $cost = 0;
+
+    public function __construct(float $cost = 0) {
+        $this->cost = $cost;
+    }
+}
+
+class DiscountCalculatorShirt extends AbstractDiscountCalculator implements DiscountCalculator {
+
+    public function get_discounted_price() {
+        return $this->cost * 0.9;
+    }
+}
+
+class DiscountCalculatorTshirt extends AbstractDiscountCalculator implements DiscountCalculator {
+
+    public function get_discounted_price() {
+        return $this->cost * 0.85;
+    }
+}
+
+class DiscountCalculatorPant extends AbstractDiscountCalculator implements DiscountCalculator {
+
+    public function get_discounted_price() {
+        return $this->cost * 0.75;
+    }
+}
+
+$dc_shirt = new DiscountCalculatorShirt(100);
+echo $dc_shirt->get_discounted_price() . PHP_EOL;
+
+$dc_tshirt = new DiscountCalculatorTshirt(100);
+echo $dc_tshirt->get_discounted_price() . PHP_EOL;
+
+$dc_pant = new DiscountCalculatorPant(100);
+echo $dc_pant->get_discounted_price() . PHP_EOL;
+
+]]>
+</code-block>
+</tab>
+</tabs>
 
 ```bash
 90.0
