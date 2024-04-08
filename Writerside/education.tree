@@ -38,6 +38,7 @@
         <toc-element topic="creational-patterns.md">
             <toc-element topic="factory-method.md"/>
             <toc-element topic="abstract-factory.md"/>
+            <toc-element topic="builder.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="python.md">
