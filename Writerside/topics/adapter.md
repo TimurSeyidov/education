@@ -162,7 +162,7 @@ hole.fits(large_sqpeg_adapter) // FALSE
 ## Преимущества и недостатки
 
 **Преимущества**
-
+    
 - Отделяет и скрывает от клиента подробности преобразования различных интерфейсов.
 
 **Недостатки**
@@ -200,8 +200,8 @@ class Adaptee:
 несовместим с существующим клиентским кодом. Адаптируемый класс нуждается в
 некоторой доработке, прежде чем клиентский код сможет его использовать.
 """
-def specific_request(self) -> str:
-return ".eetpadA eht fo roivaheb laicepS"
+    def specific_request(self) -> str:
+        return ".eetpadA eht fo roivaheb laicepS"
 
 
 class Adapter(Target, Adaptee):
@@ -218,14 +218,14 @@ def client_code(target: "Target") -> None:
 """
 Клиентский код поддерживает все классы, использующие интерфейс Target.
 """
-print(target.request(), end="")
+    print(target.request(), end="")
 
 
 if __name__ == "__main__":
-print("Client: I can work just fine with the Target objects:")
-target = Target()
-client_code(target)
-print("\n")
+    print("Client: I can work just fine with the Target objects:")
+    target = Target()
+    client_code(target)
+    print("\n")
 
     adaptee = Adaptee()
     print("Client: The Adaptee class has a weird interface. "
@@ -335,7 +335,7 @@ Adapter: (TRANSLATED) Special behavior of the Adaptee.
 <tabs>
 <tab title="Концептуальный пример">
 <h4 id="concept_adapter_php">Концептуальный пример</h4>
-<p>Этот пример показывает структуру паттерна **Адаптер**, а именно — из каких классов он состоит, какие роли эти классы выполняют и как они взаимодействуют друг с другом.</p>
+<p>Этот пример показывает структуру паттерна <b>Адаптер</b>, а именно — из каких классов он состоит, какие роли эти классы выполняют и как они взаимодействуют друг с другом.</p>
 <p>После ознакомления со структурой, вам будет легче воспринимать второй пример, который рассматривает реальный случай использования паттерна в мире PHP.</p>
 <p><b>index.php</b>: Пример структуры паттерна</p>
 <code-block lang="php">
@@ -430,7 +430,7 @@ Adapter: (TRANSLATED) Special behavior of the Adaptee.
 <h4 id="real_adapter_php">Пример из реальной жизни</h4>
 <p>Паттерн **Адаптер** позволяет использовать сторонние или устаревшие классы, даже если они несовместимы с основной частью кода. Например, вместо того, чтобы переписывать интерфейс уведомлений вашего приложения для поддержки каждого стороннего сервиса вроде Slack, Facebook, SMS и прочих, вы создаёте под эти сервисы набор специальных обёрток, которые приводят вызовы из приложения к требуемым сторонними классами интерфейсу и формату.</p>
 <p>index.php: Пример из реальной жизни</p>
-<code-blcok lang="php">
+<code-block lang="php">
 <![CDATA[
 namespace RefactoringGuru\Adapter\RealWorld;
 
@@ -553,7 +553,7 @@ $slackApi = new SlackApi("example.com", "XXXXXXXX");
 $notification = new SlackNotification($slackApi, "Example.com Developers");
 clientCode($notification);
 ]]>
-</code-blcok>
+</code-block>
 <p><b>Output.txt</b>: Результат выполнения</p>
 <code-block lang="bash">
 <![CDATA[
