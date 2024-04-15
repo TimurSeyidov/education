@@ -2,4 +2,5 @@
 <!DOCTYPE terms SYSTEM "https://resources.jetbrains.com/writerside/1.0/glossary.dtd">
 <terms>
     <term name="oop_builder_director">...а также распорядителем</term>
+    <term name="gof">Gang of Four / «Банда четырёх». Авторы книги Design Patterns: Elements of Reusable Object-Oriented Software</term>
 </terms>

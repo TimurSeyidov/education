@@ -44,6 +44,7 @@
         </toc-element>
         <toc-element topic="structural-patterns.md">
             <toc-element topic="adapter.md"/>
+            <toc-element topic="bridge.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="python.md">
