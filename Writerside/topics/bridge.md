@@ -428,11 +428,13 @@ clientCode($abstraction);
 <p><b>Output.txt</b>: Результат выполнения</p>
 <code-block lang="bash">
 <![CDATA[
+
 Abstraction: Base operation with:
 ConcreteImplementationA: Here's the result on the platform A.
 
 ExtendedAbstraction: Extended operation with:
 ConcreteImplementationB: Here's the result on the platform B.
+
 ]]>
 </code-block>
 </tab>
@@ -680,6 +682,7 @@ class JsonRenderer implements Renderer
 /**
 * Клиентский код имеет дело только с объектами Абстракции.
 */
+
 function clientCode(Page $page)
 {
     // ...
@@ -723,6 +726,7 @@ echo "\n\n";
 $page->changeRenderer($JSONRenderer);
 echo "JSON view of a simple content page, with the same client code:\n";
 clientCode($page);
+
 ]]>
 </code-block>
 <p><b>Output.txt</b>: Результат выполнения</p>
@@ -744,8 +748,8 @@ HTML view of a product page, same client code:
 <html><body>
 <h1>Star Wars, episode1</h1>
 <div class='text'>A long time ago in a galaxy far, far away...</div>
-<img src='/images/star-wars.jpeg'>
-<a href='/cart/add/123'>Add to cart</a>
+<img src="/images/star-wars.jpeg">
+<a href="/cart/add/123">Add to cart</a>
 </body></html>
 
 JSON view of a simple content page, with the same client code:
@@ -755,6 +759,7 @@ JSON view of a simple content page, with the same client code:
     "img": "/images/star-wars.jpeg",
     "link": {"href": "/cart/add/123", "title": "Add to cart"}
 }
+
 ]]>
 </code-block>
 </tab>
