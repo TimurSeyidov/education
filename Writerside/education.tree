@@ -47,6 +47,7 @@
             <toc-element topic="bridge.md"/>
             <toc-element topic="composite.md"/>
             <toc-element topic="decorator.md"/>
+            <toc-element topic="facade.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="python.md">
