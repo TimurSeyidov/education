@@ -875,6 +875,7 @@ $queue->work();
 </code-block>
 <p><b>Output.txt</b>: Результат выполнения</p>
 <code-block lang="plain text">
+<![CDATA[
 WebScrapingCommand: Downloaded https://www.imdb.com/feature/genre/
 IMDBGenresScrapingCommand: Discovered 14 genres.
 WebScrapingCommand: Downloaded https://www.imdb.com/search/title?genres=comedy
