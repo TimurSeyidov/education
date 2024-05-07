@@ -55,6 +55,8 @@
             <toc-element topic="chain-of-responsibility.md"/>
             <toc-element topic="command.md"/>
             <toc-element topic="iterator.md"/>
+            <toc-element topic="mediator.md"/>
+            <toc-element topic="memento.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="python.md">
