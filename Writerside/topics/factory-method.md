@@ -1,6 +1,6 @@
 # Фабричный метод
 
-> Также известен как: Виртуальный конструктор, Factory Method
+> Также известен как: **Виртуальный конструктор**, **Factory Method**
 
 ## Суть паттерна
 
@@ -228,26 +228,27 @@ from abc import ABC, abstractmethod
 
 class Creator(ABC):
     """
-    Класс Создатель объявляет фабричный метод, который должен возвращать объект
-    класса Продукт. Подклассы Создателя обычно предоставляют реализацию этого
-    метода.
+    Класс Создатель объявляет фабричный метод, который должен
+    возвращать объект класса Продукт. Подклассы Создателя обычно
+    предоставляют реализацию этого метода.
     """
 
     @abstractmethod
     def factory_method(self):
         """
-        Обратите внимание, что Создатель может также обеспечить реализацию
-        фабричного метода по умолчанию.
+        Обратите внимание, что Создатель может также обеспечить
+        реализацию фабричного метода по умолчанию.
         """
         pass
 
     def some_operation(self) -> str:
         """
-        Также заметьте, что, несмотря на название, основная обязанность
-        Создателя не заключается в создании продуктов. Обычно он содержит
-        некоторую базовую бизнес-логику, которая основана на объектах Продуктов,
-        возвращаемых фабричным методом. Подклассы могут косвенно изменять эту
-        бизнес-логику, переопределяя фабричный метод и возвращая из него другой
+        Также заметьте, что, несмотря на название, основная
+        обязанность Создателя не заключается в создании продуктов.
+        Обычно он содержит некоторую базовую бизнес-логику, которая
+        основана на объектах Продуктов, возвращаемых фабричным
+        методом. Подклассы могут косвенно изменять эту бизнес-логику,
+        переопределяя фабричный метод и возвращая из него другой
         тип продукта.
         """
 
@@ -255,23 +256,24 @@ class Creator(ABC):
         product = self.factory_method()
 
         # Далее, работаем с этим продуктом.
-        result = f"Creator: The same creator's code has just worked with {product.operation()}"
+        result = f"Creator: The same creator's code has just worked "
+            + "with {product.operation()}"
 
         return result
 
 
 """
-Конкретные Создатели переопределяют фабричный метод для того, чтобы изменить тип
-результирующего продукта.
+Конкретные Создатели переопределяют фабричный метод для того, чтобы
+изменить тип результирующего продукта.
 """
 
 
 class ConcreteCreator1(Creator):
     """
     Обратите внимание, что сигнатура метода по-прежнему использует тип
-    абстрактного продукта, хотя фактически из метода возвращается конкретный
-    продукт. Таким образом, Создатель может оставаться независимым от конкретных
-    классов продуктов.
+    абстрактного продукта, хотя фактически из метода возвращается
+    конкретный продукт. Таким образом, Создатель может оставаться
+    независимым от конкретных классов продуктов.
     """
 
     def factory_method(self) -> Product:
@@ -285,8 +287,8 @@ class ConcreteCreator2(Creator):
 
 class Product(ABC):
     """
-    Интерфейс Продукта объявляет операции, которые должны выполнять все
-    конкретные продукты.
+    Интерфейс Продукта объявляет операции, которые должны выполнять
+    все конкретные продукты.
     """
 
     @abstractmethod
@@ -295,7 +297,8 @@ class Product(ABC):
 
 
 """
-Конкретные Продукты предоставляют различные реализации интерфейса Продукта.
+Конкретные Продукты предоставляют различные реализации интерфейса
+Продукта.
 """
 
 
@@ -311,13 +314,14 @@ class ConcreteProduct2(Product):
 
 def client_code(creator: Creator) -> None:
     """
-    Клиентский код работает с экземпляром конкретного создателя, хотя и через
-    его базовый интерфейс. Пока клиент продолжает работать с создателем через
-    базовый интерфейс, вы можете передать ему любой подкласс создателя.
+    Клиентский код работает с экземпляром конкретного создателя, хотя
+    и через его базовый интерфейс. Пока клиент продолжает работать с
+    создателем через базовый интерфейс, вы можете передать ему любой
+    подкласс создателя.
     """
 
-    print(f"Client: I'm not aware of the creator's class, but it still works.\n"
-          f"{creator.some_operation()}", end="")
+    print(f"Client: I'm not aware of the creator's class, but it "
+          f"still works.\n{creator.some_operation()}", end="")
 
 
 if __name__ == "__main__":
@@ -331,14 +335,16 @@ if __name__ == "__main__":
 
 **Output.txt: Результат выполнения**
 
-```bash
+```text
 App: Launched with the ConcreteCreator1.
 Client: I'm not aware of the creator's class, but it still works.
-Creator: The same creator's code has just worked with {Result of the ConcreteProduct1}
+Creator: The same creator's code has just worked with {Result of the
+ConcreteProduct1}
 
 App: Launched with the ConcreteCreator2.
 Client: I'm not aware of the creator's class, but it still works.
-Creator: The same creator's code has just worked with {Result of the ConcreteProduct2}
+Creator: The same creator's code has just worked with {Result of the
+ConcreteProduct2}
 ```
 
 ### PHP
@@ -357,15 +363,15 @@ Creator: The same creator's code has just worked with {Result of the ConcretePro
 <![CDATA[
 namespace RefactoringGuru\FactoryMethod\Conceptual;
 /**
-* Класс Создатель объявляет фабричный метод, который должен возвращать объект 
-* класса Продукт. Подклассы Создателя обычно предоставляют реализацию этого 
-* метода.
+* Класс Создатель объявляет фабричный метод, который должен возвращать 
+* объект класса Продукт. Подклассы Создателя обычно предоставляют 
+* реализацию этого метода.
 */
 abstract class Creator
 {
     /**
-    * Обратите внимание, что Создатель может также обеспечить реализацию 
-    * фабричного метода по умолчанию.
+    * Обратите внимание, что Создатель может также обеспечить 
+    * реализацию фабричного метода по умолчанию.
     */
     abstract public function factoryMethod(): Product;
 
@@ -465,16 +471,18 @@ echo "App: Launched with the ConcreteCreator2.\n";
 clientCode(new ConcreteCreator2());
 ]]>
 </code-block>
-        <p><b>Output.txt</b>: Результат выполнения</p>
-<code-block lang="bash">
+<p><b>Output.txt</b>: Результат выполнения</p>
+<code-block lang="text">
 <![CDATA[
 App: Launched with the ConcreteCreator1.
 Client: I'm not aware of the creator's class, but it still works.
-Creator: The same creator's code has just worked with {Result of the ConcreteProduct1}
+Creator: The same creator's code has just worked with {Result of the
+ConcreteProduct1}
 
 App: Launched with the ConcreteCreator2.
 Client: I'm not aware of the creator's class, but it still works.
 Creator: The same creator's code has just worked with {Result of the ConcreteProduct2}
+
 ]]>
 </code-block>
     </tab>
@@ -663,8 +671,8 @@ echo "Testing ConcreteCreator2:\n";
 clientCode(new LinkedInPoster("john_smith@example.com", "******"));
 ]]>
 </code-block>
-        <p><b>Output.txt</b>: Результат выполнения</p>
-<code-block lang="bash">
+<p><b>Output.txt</b>: Результат выполнения</p>
+<code-block lang="text">
 <![CDATA[
 Testing ConcreteCreator1:
 Send HTTP API request to log in user john_smith with password ******
@@ -682,6 +690,7 @@ Send HTTP API request to log out user john_smith@example.com
 Send HTTP API request to log in user john_smith@example.com with password ******
 Send HTTP API requests to create a post in LinkedIn timeline.
 Send HTTP API request to log out user john_smith@example.com
+
 ]]>
 </code-block>
     </tab>

@@ -1,6 +1,6 @@
 # Абстрактная фабрика
 
-> Также известен как: Abstract Factory
+> Также известен как: **Abstract Factory**
 
 ## Суть паттерна
 
@@ -224,11 +224,12 @@ from abc import ABC, abstractmethod
 
 class AbstractFactory(ABC):
     """
-    Интерфейс Абстрактной Фабрики объявляет набор методов, которые возвращают
-    различные абстрактные продукты. Эти продукты называются семейством и связаны
-    темой или концепцией высокого уровня. Продукты одного семейства обычно могут
-    взаимодействовать между собой. Семейство продуктов может иметь несколько
-    вариаций, но продукты одной вариации несовместимы с продуктами другой.
+    Интерфейс Абстрактной Фабрики объявляет набор методов, которые
+    возвращают различные абстрактные продукты. Эти продукты называются
+    семейством и связаны темой или концепцией высокого уровня.
+    Продукты одного семейства обычно могут взаимодействовать между
+    собой. Семейство продуктов может иметь несколько вариаций, но 
+    продукты одной вариации несовместимы с продуктами другой.
     """
     @abstractmethod
     def create_product_a(self) -> AbstractProductA:
@@ -241,10 +242,11 @@ class AbstractFactory(ABC):
 
 class ConcreteFactory1(AbstractFactory):
     """
-    Конкретная Фабрика производит семейство продуктов одной вариации. Фабрика
-    гарантирует совместимость полученных продуктов. Обратите внимание, что
-    сигнатуры методов Конкретной Фабрики возвращают абстрактный продукт, в то
-    время как внутри метода создается экземпляр конкретного продукта.
+    Конкретная Фабрика производит семейство продуктов одной вариации.
+    Фабрика гарантирует совместимость полученных продуктов. Обратите
+    внимание, что сигнатуры методов Конкретной Фабрики возвращают
+    абстрактный продукт, в то время как внутри метода создается
+    экземпляр конкретного продукта.
     """
 
     def create_product_a(self) -> AbstractProductA:
@@ -268,8 +270,9 @@ class ConcreteFactory2(AbstractFactory):
 
 class AbstractProductA(ABC):
     """
-    Каждый отдельный продукт семейства продуктов должен иметь базовый интерфейс.
-    Все вариации продукта должны реализовывать этот интерфейс.
+    Каждый отдельный продукт семейства продуктов должен иметь базовый
+    интерфейс. Все вариации продукта должны реализовывать этот
+    интерфейс.
     """
 
     @abstractmethod
@@ -294,9 +297,10 @@ class ConcreteProductA2(AbstractProductA):
 
 class AbstractProductB(ABC):
     """
-    Базовый интерфейс другого продукта. Все продукты могут взаимодействовать
-    друг с другом, но правильное взаимодействие возможно только между продуктами
-    одной и той же конкретной вариации.
+    Базовый интерфейс другого продукта. Все продукты могут
+    взаимодействовать друг с другом, но правильное взаимодействие
+    возможно только между продуктами одной и той же конкретной
+    вариации.
     """
     @abstractmethod
     def useful_function_b(self) -> None:
@@ -306,12 +310,14 @@ class AbstractProductB(ABC):
         pass
 
     @abstractmethod
-    def another_useful_function_b(self, collaborator: AbstractProductA) -> None:
+    def another_useful_function_b(self,
+      collaborator: AbstractProductA) -> None:
         """
         ...а также взаимодействовать с Продуктами A той же вариации.
 
-        Абстрактная Фабрика гарантирует, что все продукты, которые она создает,
-        имеют одинаковую вариацию и, следовательно, совместимы.
+        Абстрактная Фабрика гарантирует, что все продукты, которые она
+        создает, имеют одинаковую вариацию и, следовательно,
+        совместимы.
         """
         pass
 
@@ -326,34 +332,40 @@ class ConcreteProductB1(AbstractProductB):
         return "The result of the product B1."
 
     """
-    Продукт B1 может корректно работать только с Продуктом A1. Тем не менее, он
-    принимает любой экземпляр Абстрактного Продукта А в качестве аргумента.
+    Продукт B1 может корректно работать только с Продуктом A1. Тем не
+    менее, он принимает любой экземпляр Абстрактного Продукта А в
+    качестве аргумента.
     """
 
-    def another_useful_function_b(self, collaborator: AbstractProductA) -> str:
+    def another_useful_function_b(self,
+      collaborator: AbstractProductA) -> str:
         result = collaborator.useful_function_a()
-        return f"The result of the B1 collaborating with the ({result})"
+        return f"The result of the B1 collaborating with the "
+            + f"({result})"
 
 
 class ConcreteProductB2(AbstractProductB):
     def useful_function_b(self) -> str:
         return "The result of the product B2."
 
-    def another_useful_function_b(self, collaborator: AbstractProductA):
+    def another_useful_function_b(self,
+      collaborator: AbstractProductA):
         """
-        Продукт B2 может корректно работать только с Продуктом A2. Тем не менее,
-        он принимает любой экземпляр Абстрактного Продукта А в качестве
-        аргумента.
+        Продукт B2 может корректно работать только с Продуктом A2.
+        Тем не менее, он принимает любой экземпляр Абстрактного
+        Продукта А в качестве аргумента.
         """
         result = collaborator.useful_function_a()
-        return f"The result of the B2 collaborating with the ({result})"
+        return f"The result of the B2 collaborating with the "
+            + f"({result})"
 
 
 def client_code(factory: AbstractFactory) -> None:
     """
-    Клиентский код работает с фабриками и продуктами только через абстрактные
-    типы: Абстрактная Фабрика и Абстрактный Продукт. Это позволяет передавать
-    любой подкласс фабрики или продукта клиентскому коду, не нарушая его.
+    Клиентский код работает с фабриками и продуктами только через
+    абстрактные типы: Абстрактная Фабрика и Абстрактный Продукт. Это
+    позволяет передавать любой подкласс фабрики или продукта
+    клиентскому коду, не нарушая его.
     """
     product_a = factory.create_product_a()
     product_b = factory.create_product_b()
@@ -371,20 +383,23 @@ if __name__ == "__main__":
 
     print("\n")
 
-    print("Client: Testing the same client code with the second factory type:")
+    print("Client: Testing the same client code with the second "
+        + "factory type:")
     client_code(ConcreteFactory2())
 ```
 
 **Output.txt: Результат выполнения**
 
-```bash
+```text
 Client: Testing client code with the first factory type:
 The result of the product B1.
-The result of the B1 collaborating with the (The result of the product A1.)
+The result of the B1 collaborating with the (The result of the product
+A1.)
 
 Client: Testing the same client code with the second factory type:
 The result of the product B2.
-The result of the B2 collaborating with the (The result of the product A2.)
+The result of the B2 collaborating with the (The result of the product
+A2.)
 ```
 
 ### PHP
@@ -576,11 +591,12 @@ clientCode(new ConcreteFactory2());
 ]]>
 </code-block>
 <p><b>Output.txt</b>: Результат выполнения</p>
-<code-block lang="bash">
+<code-block lang="text">
 <![CDATA[
 Client: Testing client code with the first factory type:
 The result of the product B1.
-The result of the B1 collaborating with the (The result of the product A1.)
+The result of the B1 collaborating with the (The result of the product
+A1.)
 
 Client: Testing the same client code with the second factory type:
 The result of the product B2.

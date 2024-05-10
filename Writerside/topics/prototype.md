@@ -1,6 +1,6 @@
 # Прототип
 
-> Также известен как: Клон, Prototype
+> Также известен как: **Клон**, **Prototype**
 
 ## Суть паттерна
 
@@ -231,29 +231,30 @@ class SelfReferencingEntity:
 class SomeComponent:
     """
     Python provides its own interface of Prototype via `copy.copy` and
-    `copy.deepcopy` functions. And any class that wants to implement custom
-    implementations have to override `__copy__` and `__deepcopy__` member
-    functions.
+    `copy.deepcopy` functions. And any class that wants to implement
+    custom implementations have to override `__copy__` and
+    `__deepcopy__` member functions.
     """
 
-    def __init__(self, some_int, some_list_of_objects, some_circular_ref):
+    def __init__(self, some_int, some_list_of_objects,
+      some_circular_ref):
         self.some_int = some_int
         self.some_list_of_objects = some_list_of_objects
         self.some_circular_ref = some_circular_ref
 
     def __copy__(self):
         """
-        Create a shallow copy. This method will be called whenever someone calls
-        `copy.copy` with this object and the returned value is returned as the
-        new shallow copy.
+        Create a shallow copy. This method will be called whenever
+        someone calls `copy.copy` with this object and the returned
+        value is returned as the new shallow copy.
         """
 
         # First, let's create copies of the nested objects.
         some_list_of_objects = copy.copy(self.some_list_of_objects)
         some_circular_ref = copy.copy(self.some_circular_ref)
 
-        # Then, let's clone the object itself, using the prepared clones of the
-        # nested objects.
+        # Then, let's clone the object itself, using the prepared
+        # clones of the nested objects.
         new = self.__class__(
             self.some_int, some_list_of_objects, some_circular_ref
         )
@@ -263,25 +264,27 @@ class SomeComponent:
 
     def __deepcopy__(self, memo=None):
         """
-        Create a deep copy. This method will be called whenever someone calls
-        `copy.deepcopy` with this object and the returned value is returned as
-        the new deep copy.
+        Create a deep copy. This method will be called whenever
+        someone calls `copy.deepcopy` with this object and the
+        returned value is returned as the new deep copy.
 
-        What is the use of the argument `memo`? Memo is the dictionary that is
-        used by the `deepcopy` library to prevent infinite recursive copies in
-        instances of circular references. Pass it to all the `deepcopy` calls
-        you make in the `__deepcopy__` implementation to prevent infinite
-        recursions.
+        What is the use of the argument `memo`? Memo is the dictionary
+        that is used by the `deepcopy` library to prevent infinite
+        recursive copies in instances of circular references. Pass it
+        to all the `deepcopy` calls you make in the `__deepcopy__`
+        implementation to prevent infinite recursions.
         """
         if memo is None:
             memo = {}
 
         # First, let's create copies of the nested objects.
-        some_list_of_objects = copy.deepcopy(self.some_list_of_objects, memo)
-        some_circular_ref = copy.deepcopy(self.some_circular_ref, memo)
+        some_list_of_objects = copy.deepcopy(
+          self.some_list_of_objects, memo)
+        some_circular_ref = copy.deepcopy(self.some_circular_ref,
+          memo)
 
-        # Then, let's clone the object itself, using the prepared clones of the
-        # nested objects.
+        # Then, let's clone the object itself, using the prepared
+        # clones of the nested objects.
         new = self.__class__(
             self.some_int, some_list_of_objects, some_circular_ref
         )
@@ -299,9 +302,10 @@ if __name__ == "__main__":
 
     shallow_copied_component = copy.copy(component)
 
-    # Let's change the list in shallow_copied_component and see if it changes in
-    # component.
-    shallow_copied_component.some_list_of_objects.append("another object")
+    # Let's change the list in shallow_copied_component and see if it
+    # changes in component.
+    shallow_copied_component.some_list_of_objects.append(
+      "another object")
     if component.some_list_of_objects[-1] == "another object":
         print(
             "Adding elements to `shallow_copied_component`'s "
@@ -319,22 +323,23 @@ if __name__ == "__main__":
     component.some_list_of_objects[1].add(4)
     if 4 in shallow_copied_component.some_list_of_objects[1]:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "changes that object in `shallow_copied_component`'s "
-            "some_list_of_objects."
+            "Changing objects in the `component`'s "
+            "some_list_of_objects changes that object in "
+            "`shallow_copied_component`'s some_list_of_objects."
         )
     else:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "doesn't change that object in `shallow_copied_component`'s "
-            "some_list_of_objects."
+            "Changing objects in the `component`'s "
+            "some_list_of_objects doesn't change that object in "
+            "`shallow_copied_component`'s some_list_of_objects."
         )
 
     deep_copied_component = copy.deepcopy(component)
 
-    # Let's change the list in deep_copied_component and see if it changes in
-    # component.
-    deep_copied_component.some_list_of_objects.append("one more object")
+    # Let's change the list in deep_copied_component and see if it
+    # changes in component.
+    deep_copied_component.some_list_of_objects.append(
+      "one more object")
     if component.some_list_of_objects[-1] == "one more object":
         print(
             "Adding elements to `deep_copied_component`'s "
@@ -352,15 +357,15 @@ if __name__ == "__main__":
     component.some_list_of_objects[1].add(10)
     if 10 in deep_copied_component.some_list_of_objects[1]:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "changes that object in `deep_copied_component`'s "
-            "some_list_of_objects."
+            "Changing objects in the `component`'s "
+            "some_list_of_objects  changes that object in "
+            "`deep_copied_component`'s some_list_of_objects."
         )
     else:
         print(
-            "Changing objects in the `component`'s some_list_of_objects "
-            "doesn't change that object in `deep_copied_component`'s "
-            "some_list_of_objects."
+            "Changing objects in the `component`'s some_list_"
+            "of_objects doesn't change that object in "
+            "`deep_copied_component`'s some_list_of_objects."
         )
 
     print(
@@ -368,25 +373,34 @@ if __name__ == "__main__":
         f"{id(deep_copied_component.some_circular_ref.parent)}"
     )
     print(
-        f"id(deep_copied_component.some_circular_ref.parent.some_circular_ref.parent): "
-        f"{id(deep_copied_component.some_circular_ref.parent.some_circular_ref.parent)}"
+        id(deep_copied_component.some_circular_ref.parent
+          .some_circular_ref.parent)
+        + ": "
+        +id(deep_copied_component.some_circular_ref.parent
+          .some_circular_ref.parent)
     )
     print(
-        "^^ This shows that deepcopied objects contain same reference, they "
-        "are not cloned repeatedly."
+        "^^ This shows that deepcopied objects contain same "
+        "reference, they are not cloned repeatedly."
     )
 ```
 
 **Output.txt: Результат выполнения**
 
 ```bash
-Adding elements to `shallow_copied_component`'s some_list_of_objects adds it to `component`'s some_list_of_objects.
-Changing objects in the `component`'s some_list_of_objects changes that object in `shallow_copied_component`'s some_list_of_objects.
-Adding elements to `deep_copied_component`'s some_list_of_objects doesn't add it to `component`'s some_list_of_objects.
-Changing objects in the `component`'s some_list_of_objects doesn't change that object in `deep_copied_component`'s some_list_of_objects.
+Adding elements to `shallow_copied_component`'s some_list_of_objects
+adds it to `component`'s some_list_of_objects.
+Changing objects in the `component`'s some_list_of_objects changes
+that object in `shallow_copied_component`'s some_list_of_objects.
+Adding elements to `deep_copied_component`'s some_list_of_objects
+doesn't add it to `component`'s some_list_of_objects.
+Changing objects in the `component`'s some_list_of_objects doesn't
+change that object in `deep_copied_component`'s some_list_of_objects.
 id(deep_copied_component.some_circular_ref.parent): 4429472784
-id(deep_copied_component.some_circular_ref.parent.some_circular_ref.parent): 4429472784
-^^ This shows that deepcopied objects contain same reference, they are not cloned repeatedly.
+id(deep_copied_component.some_circular_ref.parent.some_circular_ref
+.parent): 4429472784
+^^ This shows that deepcopied objects contain same reference, they are
+not cloned repeatedly.
 ```
 
 ### PHP
@@ -614,9 +628,10 @@ clientCode();
 ]]>
 </code-block>
 <p><b>Output.txt</b>: Результат выполнения</p>
-<code-block lang="bash">
+<code-block lang="text">
 <![CDATA[
-Dump of the clone. Note that the author is now referencing two objects.
+Dump of the clone. Note that the author is now referencing two
+objects.
 
 RefactoringGuru\Prototype\RealWorld\Page Object
 (
