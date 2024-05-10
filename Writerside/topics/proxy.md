@@ -1,6 +1,6 @@
 # Заместитель
 
-> Также известен как: Proxy
+> Также известен как: **Proxy**
 
 ## Суть паттерна
 
@@ -297,7 +297,7 @@ if __name__ == "__main__":
 
 **Output.txt**: Результат выполнения
 
-```bash
+```text
 Client: Executing the client code with a real subject:
 RealSubject: Handling request.
 

@@ -1,6 +1,6 @@
 # Посредник
 
-> Также известен как: Intermediary, Controller, Mediator
+> Также известен как: **Intermediary**, **Controller**, **Mediator**
 
 ## Суть паттерна
 

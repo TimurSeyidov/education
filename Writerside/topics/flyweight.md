@@ -1,6 +1,6 @@
 # Легковес
 
-> Также известен как: Приспособленец, Кэш, Flyweight
+> Также известен как: **Приспособленец**, **Кэш**, **Flyweight**
 
 ## Суть паттерна
 
@@ -286,7 +286,7 @@ if __name__ == "__main__":
 
 **Output.txt**: Результат выполнения
 
-```bash
+```text
 FlyweightFactory: I have 5 flyweights:
 Camaro2018_Chevrolet_pink
 C300_Mercedes Benz_black
@@ -296,11 +296,13 @@ BMW_X6_white
 
 Client: Adding a car to database.
 FlyweightFactory: Reusing existing flyweight.
-Flyweight: Displaying shared (["BMW", "M5", "red"]) and unique (["CL234IR", "James Doe"]) state.
+Flyweight: Displaying shared (["BMW", "M5", "red"]) and unique
+(["CL234IR", "James Doe"]) state.
 
 Client: Adding a car to database.
 FlyweightFactory: Can't find a flyweight, creating new one.
-Flyweight: Displaying shared (["BMW", "X1", "red"]) and unique (["CL234IR", "James Doe"]) state.
+Flyweight: Displaying shared (["BMW", "X1", "red"]) and unique 
+(["CL234IR", "James Doe"]) state.
 
 FlyweightFactory: I have 6 flyweights:
 Camaro2018_Chevrolet_pink
@@ -420,6 +422,7 @@ $factory = new FlyweightFactory([
     ["BMW", "M5", "red"],
     ["BMW", "X6", "white"],
     // ...
+
 ]);
 $factory->listFlyweights();
 

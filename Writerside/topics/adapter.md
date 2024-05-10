@@ -1,6 +1,6 @@
 # Адаптер
 
-> Также известен как: Wrapper, Обёртка, Adapter
+> Также известен как: **Wrapper**, **Обёртка**, **Adapter**
 
 ## Суть паттерна
 
@@ -187,7 +187,8 @@ hole.fits(large_sqpeg_adapter) // FALSE
 <![CDATA[
 class Target:
     """
-    Целевой класс объявляет интерфейс, с которым может работать клиентский код.
+    Целевой класс объявляет интерфейс, с которым может работать
+    клиентский код.
     """
 
     def request(self) -> str:
@@ -248,6 +249,7 @@ Adaptee: .eetpadA eht fo roivaheb laicepS
 
 Client: But I can work with it via the Adapter:
 Adapter: (TRANSLATED) Special behavior of the Adaptee.
+
 ]]>
 </code-block>
 </tab>
@@ -259,7 +261,8 @@ Adapter: (TRANSLATED) Special behavior of the Adaptee.
 <![CDATA[
 class Target:
     """
-    Целевой класс объявляет интерфейс, с которым может работать клиентский код.
+    Целевой класс объявляет интерфейс, с которым может работать
+    клиентский код.
     """
 
     def request(self) -> str:
@@ -325,6 +328,7 @@ Adaptee: .eetpadA eht fo roivaheb laicepS
 
 Client: But I can work with it via the Adapter:
 Adapter: (TRANSLATED) Special behavior of the Adaptee.
+
 ]]>
 </code-block>
 </tab>
@@ -428,6 +432,7 @@ Adaptee: .eetpadA eht fo roivaheb laicepS
 
 Client: But I can work with it via the Adapter:
 Adapter: (TRANSLATED) Special behavior of the Adaptee.
+
 ]]>
 </code-block>
 </tab>
@@ -563,11 +568,14 @@ clientCode($notification);
 <code-block lang="bash">
 <![CDATA[
 Client code is designed correctly and works with email notifications:
-Sent email with title 'Website is down!' to 'developers@example.com' that says '<strong style='color:red;font-size: 50px;'>Alert!</strong> Our website is not responding. Call admins and bring it up!'.
+Sent email with title 'Website is down!' to 'developers@example.com'
+that says '<strong style='color:red;font-size: 50px;'>Alert!</strong>
+Our website is not responding. Call admins and bring it up!'.
 
 The same client code can work with other classes via adapter:
 Logged in to a slack account 'example.com'.
 Posted following message into the 'Example.com Developers' chat: '#Website is down!# Alert! Our website is not responding. Call admins and bring it up!'.
+
 ]]>
 </code-block>
 </tab>

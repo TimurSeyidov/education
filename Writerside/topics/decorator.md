@@ -1,6 +1,6 @@
 # Декоратор
 
-> Также известен как: Wrapper, Обёртка, Decorator
+> Также известен как: **Wrapper**, **Обёртка**, **Decorator**
 
 ## Суть паттерна
 
@@ -364,7 +364,7 @@ if __name__ == "__main__":
 
 **Output.txt**: Результат выполнения
 
-```bash
+```text
 Client: I've got a simple component:
 RESULT: ConcreteComponent
 

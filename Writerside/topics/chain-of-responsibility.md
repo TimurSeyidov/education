@@ -1,6 +1,6 @@
 # Цепочка обязанностей
 
-> Также известен как: CoR, Chain of Command, Chain of Responsibility
+> Также известен как: **CoR**, **Chain of Command**, **Chain of Responsibility**
 
 ## Суть паттерна
 
@@ -356,7 +356,7 @@ if __name__ == "__main__":
 
 **Output.txt**: Результат выполнения
 
-```bash
+```text
 Chain: Monkey > Squirrel > Dog
 
 Client: Who wants a Nut?

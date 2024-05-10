@@ -1,6 +1,6 @@
 # Состояние
 
-> Также известен как: State
+> Также известен как: **State**
 
 ## Суть паттерна
 
@@ -516,11 +516,14 @@ $context->request2();
 **Output.txt**: Результат выполнения
 
 ```text
-Context: Transition to RefactoringGuru\State\Conceptual\ConcreteStateA.
+Context: Transition to RefactoringGuru\State\Conceptual\
+ConcreteStateA.
 ConcreteStateA handles request1.
 ConcreteStateA wants to change the state of the context.
-Context: Transition to RefactoringGuru\State\Conceptual\ConcreteStateB.
+Context: Transition to RefactoringGuru\State\Conceptual\
+ConcreteStateB.
 ConcreteStateB handles request2.
 ConcreteStateB wants to change the state of the context.
-Context: Transition to RefactoringGuru\State\Conceptual\ConcreteStateA.
+Context: Transition to RefactoringGuru\State\Conceptual\
+ConcreteStateA.
 ```

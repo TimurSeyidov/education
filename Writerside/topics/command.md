@@ -1,6 +1,6 @@
 # Команда
 
-> Также известен как: Действие, Транзакция, Action, Command
+> Также известен как: **Действие**, **Транзакция**, **Action**, **Command**
 
 ## Суть паттерна
 
@@ -313,27 +313,29 @@ class Command(ABC):
 
 class SimpleCommand(Command):
     """
-    Некоторые команды способны выполнять простые операции самостоятельно.
+    Некоторые команды способны выполнять простые операции
+    самостоятельно.
     """
 
     def __init__(self, payload: str) -> None:
         self._payload = payload
 
     def execute(self) -> None:
-        print(f"SimpleCommand: See, I can do simple things like printing"
-              f"({self._payload})")
+        print(f"SimpleCommand: See, I can do simple things like "
+              f"printing({self._payload})")
 
 
 class ComplexCommand(Command):
     """
-    Но есть и команды, которые делегируют более сложные операции другим
-    объектам, называемым «получателями».
+    Но есть и команды, которые делегируют более сложные операции
+    другим объектам, называемым «получателями».
     """
 
     def __init__(self, receiver: Receiver, a: str, b: str) -> None:
         """
-        Сложные команды могут принимать один или несколько объектов-получателей
-        вместе с любыми данными о контексте через конструктор.
+        Сложные команды могут принимать один или несколько
+        объектов-получателей вместе с любыми данными о контексте через
+        конструктор.
         """
 
         self._receiver = receiver
@@ -342,19 +344,21 @@ class ComplexCommand(Command):
 
     def execute(self) -> None:
         """
-        Команды могут делегировать выполнение любым методам получателя.
+        Команды могут делегировать выполнение любым методам
+        получателя.
         """
 
-        print("ComplexCommand: Complex stuff should be done by a receiver object", end="")
+        print("ComplexCommand: Complex stuff should be done by a "
+          + "receiver object", end="")
         self._receiver.do_something(self._a)
         self._receiver.do_something_else(self._b)
 
 
 class Receiver:
     """
-    Классы Получателей содержат некую важную бизнес-логику. Они умеют выполнять
-    все виды операций, связанных с выполнением запроса. Фактически, любой класс
-    может выступать Получателем.
+    Классы Получателей содержат некую важную бизнес-логику. Они умеют
+    выполнять все виды операций, связанных с выполнением запроса.
+    Фактически, любой класс может выступать Получателем.
     """
 
     def do_something(self, a: str) -> None:
@@ -366,8 +370,8 @@ class Receiver:
 
 class Invoker:
     """
-    Отправитель связан с одной или несколькими командами. Он отправляет запрос
-    команде.
+    Отправитель связан с одной или несколькими командами. Он
+    отправляет запрос команде.
     """
 
     _on_start = None
@@ -385,17 +389,21 @@ class Invoker:
 
     def do_something_important(self) -> None:
         """
-        Отправитель не зависит от классов конкретных команд и получателей.
-        Отправитель передаёт запрос получателю косвенно, выполняя команду.
+        Отправитель не зависит от классов конкретных команд и
+        получателей.
+        Отправитель передаёт запрос получателю косвенно, выполняя
+        команду.
         """
 
-        print("Invoker: Does anybody want something done before I begin?")
+        print("Invoker: Does anybody want something done before I "
+          + "begin?")
         if isinstance(self._on_start, Command):
             self._on_start.execute()
 
         print("Invoker: ...doing something really important...")
 
-        print("Invoker: Does anybody want something done after I finish?")
+        print("Invoker: Does anybody want something done after I "
+          + "finish?")
         if isinstance(self._on_finish, Command):
             self._on_finish.execute()
 
@@ -878,13 +886,17 @@ $queue->work();
 <![CDATA[
 WebScrapingCommand: Downloaded https://www.imdb.com/feature/genre/
 IMDBGenresScrapingCommand: Discovered 14 genres.
-WebScrapingCommand: Downloaded https://www.imdb.com/search/title?genres=comedy
+WebScrapingCommand: Downloaded https://www.imdb.com/search/title?
+genres=comedy
 IMDBGenrePageScrapingCommand: Discovered 50 movies.
-WebScrapingCommand: Downloaded https://www.imdb.com/search/title?genres=sci-fi
+WebScrapingCommand: Downloaded https://www.imdb.com/search/title?
+genres=sci-fi
 IMDBGenrePageScrapingCommand: Discovered 50 movies.
-WebScrapingCommand: Downloaded https://www.imdb.com/search/title?genres=horror
+WebScrapingCommand: Downloaded https://www.imdb.com/search/title?
+genres=horror
 IMDBGenrePageScrapingCommand: Discovered 50 movies.
-WebScrapingCommand: Downloaded https://www.imdb.com/search/title?genres=romance
+WebScrapingCommand: Downloaded https://www.imdb.com/search/title?
+genres=romance
 IMDBGenrePageScrapingCommand: Discovered 50 movies.
 ...
 

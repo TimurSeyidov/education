@@ -1,6 +1,6 @@
 # Снимок
 
-> Также известен как: Хранитель, Memento
+> Также известен как: **Хранитель**, **Memento**
 
 ## Суть паттерна
 
@@ -256,9 +256,9 @@ class Originator:
 
 class Memento(ABC):
     """
-    Интерфейс Снимка предоставляет способ извлечения метаданных снимка,
-    таких как дата создания или название. Однако он не раскрывает
-    состояние Создателя.
+    Интерфейс Снимка предоставляет способ извлечения метаданных
+    снимка, таких как дата создания или название. Однако он не
+    раскрывает состояние Создателя.
     """
 
     @abstractmethod
@@ -356,15 +356,18 @@ Originator: My initial state is: Super-duper-super-puper-super.
 
 Caretaker: Saving Originator's state...
 Originator: I'm doing something important.
-Originator: and my state has changed to: wQAehHYOqVSlpEXjyIcgobrxsZUnat
+Originator: and my state has changed to:
+wQAehHYOqVSlpEXjyIcgobrxsZUnat
 
 Caretaker: Saving Originator's state...
 Originator: I'm doing something important.
-Originator: and my state has changed to: lHxNORKcsgMWYnJqoXjVCbQLEIeiSp
+Originator: and my state has changed to:
+lHxNORKcsgMWYnJqoXjVCbQLEIeiSp
 
 Caretaker: Saving Originator's state...
 Originator: I'm doing something important.
-Originator: and my state has changed to: cvIYsRilNOtwynaKdEZpDCQkFAXVMf
+Originator: and my state has changed to:
+cvIYsRilNOtwynaKdEZpDCQkFAXVMf
 
 Caretaker: Here's the list of mementos:
 2019-01-26 21:11:24 / (Super-dup...)
@@ -434,7 +437,8 @@ class Originator
         return substr(
             str_shuffle(
                 str_repeat(
-                    $x = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                    $x = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQ'
+                        . 'RSTUVWXYZ',
                     ceil($length / strlen($x))
                 )
             ),
@@ -598,15 +602,18 @@ Originator: My initial state is: Super-duper-super-puper-super.
 
 Caretaker: Saving Originator's state...
 Originator: I'm doing something important.
-Originator: and my state has changed to: srGIngezAEboNPDjBkuvymJKUtMSFX
+Originator: and my state has changed to:
+srGIngezAEboNPDjBkuvymJKUtMSFX
 
 Caretaker: Saving Originator's state...
 Originator: I'm doing something important.
-Originator: and my state has changed to: UwCZQaHJOiERLlchyVuMbXNtpqTgWF
+Originator: and my state has changed to:
+UwCZQaHJOiERLlchyVuMbXNtpqTgWF
 
 Caretaker: Saving Originator's state...
 Originator: I'm doing something important.
-Originator: and my state has changed to: incqsdoJXkbDUuVOvRFYyKBgfzwZCQ
+Originator: and my state has changed to:
+incqsdoJXkbDUuVOvRFYyKBgfzwZCQ
 
 Caretaker: Here's the list of mementos:
 2018-06-04 14:50:39 / (Super-dup...)
