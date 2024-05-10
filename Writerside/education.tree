@@ -61,6 +61,7 @@
             <toc-element topic="state.md"/>
             <toc-element topic="strategy.md"/>
             <toc-element topic="template-method.md"/>
+            <toc-element topic="visitor.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="python.md">
