@@ -58,6 +58,8 @@
             <toc-element topic="mediator.md"/>
             <toc-element topic="memento.md"/>
             <toc-element topic="observer.md"/>
+            <toc-element topic="state.md"/>
+            <toc-element topic="strategy.md"/>
         </toc-element>
     </toc-element>
     <toc-element topic="python.md">
