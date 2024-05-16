@@ -48,7 +48,7 @@ def greet(name):
     print("Здравствуй,", name)
 
 greet(name)
-    print("Name:", name)
+print("Name:", name)
 ```
 
 Чему, по вашему мнению, будет равно имя в конце программы и почему?
