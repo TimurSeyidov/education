@@ -83,6 +83,9 @@
         <toc-element topic="python-lambda.md">
             <toc-element topic="python-lambda-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-process-collection-sys.md">
+            <toc-element topic="python-procces-collection-sys-exercise.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Git.md">
         <toc-element topic="Introduction.md"/>
