@@ -80,6 +80,9 @@
         <toc-element topic="python_function_multi_attr.md">
             <toc-element topic="python_function_multiple_attr_exercise.md"/>
         </toc-element>
+        <toc-element topic="python-lambda.md">
+            <toc-element topic="python-lambda-exercise.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Git.md">
         <toc-element topic="Introduction.md"/>
