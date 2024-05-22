@@ -654,12 +654,12 @@ import datetime as dt
 
 # поддерживается форматированный вывод
 my_format = "%B"
-print(dt.datetime.now().strftime('%A %d-%B-%y %H:%M:S'))
+print(dt.datetime.now().strftime("%A %d %B %y %H:%M:S"))
 print(dt.date.today().strftime(my_format))
 ```
 
 ```bash
-Wednesday 04-September-19 18:50:S
+Wednesday 04 September 19 18:50:S
 September
 ```
 

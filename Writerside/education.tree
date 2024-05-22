@@ -89,6 +89,9 @@
         <toc-element topic="python_library_1.md">
             <toc-element topic="python-library-1-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-library-2.md">
+            <toc-element topic="python-library-2-exercise.md"/>
+        </toc-element>
     </toc-element>
     <toc-element topic="Git.md">
         <toc-element topic="Introduction.md"/>
