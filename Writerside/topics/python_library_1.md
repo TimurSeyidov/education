@@ -694,7 +694,7 @@ September
 Модуль `pprint` содержит функцию `pprint`, которую удобно использовать при выводе сложных типов данных. `pprint` старается вывести в консоль объекты в наиболее читабельном для человека виде. Ее особенно удобно использовать для вывода матриц.
 
 ```python
-import random
+from random import sample
 from pprint import pprint
 
 a = [sample(range(20), 6) for _ in range(10)]
@@ -725,7 +725,6 @@ pprint(a)
 `pprint` работает и для словарей.
 
 ```python
-import random
 from pprint import pprint
 
 b = {x: x ** 2 for x in range(20)}
