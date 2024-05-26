@@ -30,4 +30,8 @@
         <description>Created after removal of "Паттерны проектирования" from Education</description>
         <accepts>Паттерны-проектирования.html</accepts>
     </rule>
+    <rule id="2faabaae">
+        <description>Created after removal of "Задачи" from Education</description>
+        <accepts>Задачи.html</accepts>
+    </rule>
 </rules>
