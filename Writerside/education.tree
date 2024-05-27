@@ -36,16 +36,32 @@
     <toc-element topic="patterns.md">
         <toc-element topic="pattern-introduce.md"/>
         <toc-element topic="creational-patterns.md">
-            <toc-element topic="factory-method.md"/>
-            <toc-element topic="abstract-factory.md"/>
-            <toc-element topic="builder.md"/>
-            <toc-element topic="prototype.md"/>
-            <toc-element topic="singleton.md"/>
+            <toc-element topic="factory-method.md">
+                <toc-element topic="factory-method-task.md"/>
+            </toc-element>
+            <toc-element topic="abstract-factory.md">
+                <toc-element topic="abstract-factory-task.md"/>
+            </toc-element>
+            <toc-element topic="builder.md">
+                <toc-element topic="builder-task.md"/>
+            </toc-element>
+            <toc-element topic="prototype.md">
+                <toc-element topic="prototype-task.md"/>
+            </toc-element>
+            <toc-element topic="singleton.md">
+                <toc-element topic="singleton-task.md"/>
+            </toc-element>
         </toc-element>
         <toc-element topic="structural-patterns.md">
-            <toc-element topic="adapter.md"/>
-            <toc-element topic="bridge.md"/>
-            <toc-element topic="composite.md"/>
+            <toc-element topic="adapter.md">
+                <toc-element topic="adapter-task.md"/>
+            </toc-element>
+            <toc-element topic="bridge.md">
+                <toc-element topic="bridge-task.md"/>
+            </toc-element>
+            <toc-element topic="composite.md">
+                <toc-element topic="composite-task.md"/>
+            </toc-element>
             <toc-element topic="decorator.md"/>
             <toc-element topic="facade.md"/>
             <toc-element topic="flyweight.md"/>
