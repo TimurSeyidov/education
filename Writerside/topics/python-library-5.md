@@ -246,6 +246,23 @@ workbook.close()
 
 С помощью метода `add_chart` можно создать диаграмму, указав ее тип и данные для построения. После чего построенную диаграмму можно добавить на страницу с помощью метода `insert_chart` с указанием ячейки вставки и самой диаграммы.
 
+```python
+import xlsxwriter
+ 
+workbook = xlsxwriter.Workbook('диаграммы.xlsx')
+worksheet = workbook.add_worksheet()
+# Данные
+data = [10, 40, 50, 20, 10, 50, 20]
+worksheet.write_column('A1', data)
+# Тип диаграммы
+chart = workbook.add_chart({'type': 'line'})
+# Строим по нашим данным
+chart.add_series({'values': '=Sheet1!A1:A7'})
+ 
+worksheet.insert_chart('C1', chart)
+workbook.close()
+
+```
 ![Создание таблиц Excel - Диаграммы](../images/python/p_26_06.png)
 
 Для чтения информации из xlsx-файлов часто используется библиотека `xlrd`, а с помощью `openpyxl` можно как создавать, так и читать и редактировать файлы формата .xlsx. Рассмотрите примеры использования этих библиотек самостоятельно.
