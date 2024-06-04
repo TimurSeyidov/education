@@ -6,6 +6,9 @@
                  name="Education"
                  start-page="starter-topic.md">
 
+    <toc-element topic="python_top.md">
+        <toc-element topic="python_top_1.md"/>
+    </toc-element>
     <toc-element topic="python-oop.md">
         <toc-element topic="python-oop-introducing.md"/>
         <toc-element topic="oop-python-intro.md">
