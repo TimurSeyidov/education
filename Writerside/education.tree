@@ -10,6 +10,7 @@
         <toc-element topic="python_top_1.md"/>
         <toc-element topic="python_top_2.md"/>
         <toc-element topic="python_top_3.md"/>
+        <toc-element topic="python_top_4.md"/>
     </toc-element>
     <toc-element topic="python-oop.md">
         <toc-element topic="python-oop-introducing.md"/>
@@ -93,6 +94,9 @@
         </toc-element>
         <toc-element topic="python-condition.md">
             <toc-element topic="exersice-python-condition.md"/>
+        </toc-element>
+        <toc-element topic="python-simple-function.md">
+            <toc-element topic="exercise-python-simple-functions.md"/>
         </toc-element>
         <toc-element topic="python-env.md">
             <toc-element topic="python-env-exercise.md"/>
