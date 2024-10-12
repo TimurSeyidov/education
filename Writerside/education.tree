@@ -101,6 +101,9 @@
         <toc-element topic="python-cycle-while.md">
             <toc-element topic="python-cycle-while-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-cycle-for.md">
+            <toc-element topic="python-cycle-for-exercise.md"/>
+        </toc-element>
         <toc-element topic="python-env.md">
             <toc-element topic="python-env-exercise.md"/>
         </toc-element>
