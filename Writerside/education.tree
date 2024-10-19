@@ -104,6 +104,9 @@
         <toc-element topic="python-cycle-for.md">
             <toc-element topic="python-cycle-for-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-true-false.md">
+            <toc-element topic="python-true-false-exercise.md"/>
+        </toc-element>
         <toc-element topic="python-env.md">
             <toc-element topic="python-env-exercise.md"/>
         </toc-element>
