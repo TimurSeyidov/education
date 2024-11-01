@@ -113,6 +113,9 @@
         <toc-element topic="python-string-indexed.md">
             <toc-element topic="python-string-indexed-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-string-slice.md">
+            <toc-element topic="python-string-slice-exercise.md"/>
+        </toc-element>
         <toc-element topic="python-env.md">
             <toc-element topic="python-env-exercise.md"/>
         </toc-element>
