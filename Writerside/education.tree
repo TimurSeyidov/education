@@ -125,6 +125,9 @@
         <toc-element topic="python-split-join.md">
             <toc-element topic="python-split-join-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-list-str-methods.md">
+            <toc-element topic="python-list-str-methods-exercise.md"/>
+        </toc-element>
         <toc-element topic="python-env.md">
             <toc-element topic="python-env-exercise.md"/>
         </toc-element>
