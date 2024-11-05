@@ -131,6 +131,9 @@
         <toc-element topic="python-dict.md">
             <toc-element topic="python-dict-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-function.md">
+            <toc-element topic="python-function-exercise.md"/>
+        </toc-element>
         <toc-element topic="python-env.md">
             <toc-element topic="python-env-exercise.md"/>
         </toc-element>
