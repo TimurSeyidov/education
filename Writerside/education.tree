@@ -119,6 +119,9 @@
         <toc-element topic="python-list.md">
             <toc-element topic="python-list-exercise.md"/>
         </toc-element>
+        <toc-element topic="python-tuple.md">
+            <toc-element topic="python-tuple-exercise.md"/>
+        </toc-element>
         <toc-element topic="python-env.md">
             <toc-element topic="python-env-exercise.md"/>
         </toc-element>
